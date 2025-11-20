@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Einaudi",
+    "founded_year": 1933,
+    "country": "Italia"
+  },
+  {
+    "name": "Penguin Random House",
+    "founded_year": 2013,
+    "country": "USA"
+  },
+  {
+    "name": "Mondadori",
+    "founded_year": 1907,
+    "country": "Italia"
+  },
+  {
+    "name": "HarperCollins",
+    "founded_year": 1989,
+    "country": "USA"
+  },
+  {
+    "name": "Feltrinelli",
+    "founded_year": 1954,
+    "country": "Italia"
+  }
+]
