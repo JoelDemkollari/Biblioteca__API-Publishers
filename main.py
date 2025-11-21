@@ -1,10 +1,11 @@
-import tornado, asyncio, pymongo
-
+import tornado, asyncio
+from pymongo import AsyncMongoClient
 from handlers import handlerBooks, handlerPublishers
 
 def make_app():
     return tornado.web.Application([
         (r"/publishers", handlerPublishers.PublisherHandler),
+        (r"/publishers/([a-f0-9]{24})", handlerPublishers.PublisherHandler)
     ])
 
 async def main(shutdown_event):
