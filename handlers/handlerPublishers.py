@@ -34,7 +34,16 @@ class PublisherHandler(tornado.web.RequestHandler):
         elif not publisher_id:
             respDict = []
             
-            coll_curs = self.pubCollection.find({})
+            query = {}
+            if pubName:
+                query["name"] = pubName
+            if pubCountry:
+                query["country"] = pubCountry
+            
+            if pubCountry or pubName:
+                coll_curs = self.pubCollection.find(query)
+            else:            
+                coll_curs = self.pubCollection.find({})
             async for doc in coll_curs:
                 doc["_id"] = str(doc['_id'])
                 respDict.append(doc)

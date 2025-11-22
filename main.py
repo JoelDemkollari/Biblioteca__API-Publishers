@@ -5,7 +5,9 @@ from handlers import handlerBooks, handlerPublishers
 def make_app():
     return tornado.web.Application([
         (r"/publishers", handlerPublishers.PublisherHandler),
-        (r"/publishers/([a-f0-9]{24})", handlerPublishers.PublisherHandler)
+        (r"/publishers/([a-f0-9]{24})", handlerPublishers.PublisherHandler),
+        (r"/publishers/([a-f0-9]{24})/books", handlerBooks.BookHandler),
+        (r"/publishers/([a-f0-9]{24})/books/([a-f0-9]{24})", handlerBooks.BookHandler)
     ])
 
 async def main(shutdown_event):
